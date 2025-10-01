@@ -4,12 +4,11 @@ public class Chat extends Animal {
     }
 
     @Override
-    boolean soinQuotidien() {
-        return super.soinQuotidien();
+    public void soinQuotidien() {
     }
 
     @Override
-    boolean bruit() {
-        return super.bruit();
+    public String bruit() {
+        return "Miaou";
     }
 }
