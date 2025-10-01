@@ -9,7 +9,7 @@ public class Chien extends Animal {
     }
 
     @Override
-    boolean bruit(){
+    boolean bruit() {
         return super.bruit();
     }
 }

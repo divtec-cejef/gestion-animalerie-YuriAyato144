@@ -1,4 +1,8 @@
 import java.util.ArrayList;
-public class Employe {
 
+public abstract class Employe {
+    boolean effectuerTache(Animal animal) {
+
+        return false;
+    }
 }
