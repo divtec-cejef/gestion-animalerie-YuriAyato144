@@ -1,6 +1,6 @@
 public class Lapin extends Animal {
 
-    public Lapin(String nom, int age, String santé) {
-        super(nom, age, santé);
+    public Lapin(String nom, int age, String sante) {
+        super(nom, age, sante);
     }
 }
