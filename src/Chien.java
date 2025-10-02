@@ -1,15 +1,15 @@
 public class Chien extends Animal {
-    public Chien(String nom, int age, String sante) {
+    public Chien(String nom, int age, EtatSante sante) {
         super(nom, age, sante);
     }
 
     @Override
-    boolean soinQuotidien() {
-        return super.soinQuotidien();
+    public String soinQuotidien() {
+        return "brosser";
     }
 
     @Override
-    boolean bruit(){
-        return super.bruit();
+    public String bruit() {
+        return "Wouaf";
     }
 }

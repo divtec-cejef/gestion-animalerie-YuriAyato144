@@ -1,6 +1,6 @@
-public class Vétérinaire extends Employe {
-    @Override
-    boolean effectuerTache(Animal animal) {
-        return super.effectuerTache(animal);
+public abstract class Vétérinaire extends Employe {
+    public Vétérinaire(Animal animal, String nom, int age, int salaire, String role) {
+        super(nom, age, salaire, role);
+
     }
 }
