@@ -1,14 +1,15 @@
 public class Chien extends Animal {
-    public Chien(String nom, int age, String sante) {
+    public Chien(String nom, int age, EtatSante sante) {
         super(nom, age, sante);
     }
 
     @Override
-    public void soinQuotidien() {
+    public String soinQuotidien() {
+        return "brosser";
     }
 
     @Override
     public String bruit() {
-        return "Waf";
+        return "Wouaf";
     }
 }

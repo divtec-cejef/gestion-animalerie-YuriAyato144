@@ -1,10 +1,11 @@
 public class Lapin extends Animal {
-    public Lapin(String nom, int age, String sante) {
+    public Lapin(String nom, int age, EtatSante sante) {
         super(nom, age, sante);
     }
 
     @Override
-    public void soinQuotidien() {
+    public String soinQuotidien() {
+        return "";
     }
 
     @Override

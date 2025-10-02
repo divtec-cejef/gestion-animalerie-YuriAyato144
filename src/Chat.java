@@ -1,10 +1,11 @@
 public class Chat extends Animal {
-    public Chat(String nom, int age, String sante) {
+    public Chat(String nom, int age, EtatSante sante) {
         super(nom, age, sante);
     }
 
     @Override
-    public void soinQuotidien() {
+    public String soinQuotidien() {
+        return "";
     }
 
     @Override
