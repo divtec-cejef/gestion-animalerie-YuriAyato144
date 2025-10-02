@@ -5,7 +5,7 @@ public class Lapin extends Animal {
 
     @Override
     public String soinQuotidien() {
-        return "";
+        return "le manger";
     }
 
     @Override

@@ -32,6 +32,6 @@ public abstract class Animal {
     public abstract String soinQuotidien();
 
     public String toString() {
-        return toString();
+        return "Nom : " + this.nom + "\n" + "Âge : " + this.age + " ans\n" + "État de santé : " + this.sante + "\n";
     }
 }
