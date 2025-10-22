@@ -3,4 +3,8 @@ public abstract class Soigneur extends Employe {
         super(nom, age, salaire);
     }
 
+    @Override
+    public String effuctuerTache(Animal animal) {
+return "";
+    }
 }
