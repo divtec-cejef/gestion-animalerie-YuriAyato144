@@ -11,14 +11,14 @@ public class ConsoleIO {
     ArrayList<Employe> listeEmployes = new ArrayList<>();
     Soigneur soigeur = new Soigneur("Soigeur", "Jean", 24, 4500, "Soigner les animaux selon leurs types") {
         @Override
-        public String effuctuerTache() {
+        public String effuctuerTache(Animal animal) {
             return "";
         }
     };
 
     Vétérinaire veterinaire = new Vétérinaire("Vétérinaire", "Janne", 38, 5890, "Amélioré l'état de santé des animaux") {
         @Override
-        public String effuctuerTache() {
+        public String effuctuerTache(Animal animal) {
             return "";
         }
     };

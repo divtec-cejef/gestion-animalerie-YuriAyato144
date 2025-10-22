@@ -13,7 +13,7 @@ public abstract class Employe {
         this.role = role;
     }
 
-    public abstract String effuctuerTache();
+    public abstract String effuctuerTache(Animal animal);
 
     public String toString() {
         return "Métier : " + this.metier + "\n" + "Nom : " + this.nom + "\n" + "Âge : " + this.age + " ans\n" + "Salaire : " + this.salaire + ".-" + "\n" + "Role : " + this.role + "\n";
