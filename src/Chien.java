@@ -3,12 +3,12 @@ public class Chien extends Animal {
         super(race, nom, age, sante);
     }
 
-    @Override
+
     public String soinQuotidien() {
         return "brosser";
     }
 
-    @Override
+
     public String bruit() {
         return "Wouaf";
     }

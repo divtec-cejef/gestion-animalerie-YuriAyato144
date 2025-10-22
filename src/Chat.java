@@ -3,12 +3,12 @@ public class Chat extends Animal {
         super(race, nom, age, sante);
     }
 
-    @Override
+
     public String soinQuotidien() {
         return "gratouiller";
     }
 
-    @Override
+
     public String bruit() {
         return "Miaou";
     }

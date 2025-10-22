@@ -3,12 +3,12 @@ public class Lapin extends Animal {
         super(race, nom, age, sante);
     }
 
-    @Override
+
     public String soinQuotidien() {
         return "le manger";
     }
 
-    @Override
+
     public String bruit() {
         return "IIIIIIIIIIIIIH (selon ChatGPT)";
     }
