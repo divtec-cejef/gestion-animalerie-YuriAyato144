@@ -16,7 +16,7 @@ public class ConsoleIO {
         }
     };
 
-    Veterinaire veterinaire = new Veterinaire("Vétérinaire", "Janne", 38, 5890, "Amélioré l'état de santé des animaux") {
+    Vétérinaire veterinaire = new Vétérinaire("Vétérinaire", "Janne", 38, 5890, "Amélioré l'état de santé des animaux") {
         @Override
         public String effuctuerTache() {
             return "";

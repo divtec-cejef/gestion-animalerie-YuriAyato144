@@ -1,12 +1,12 @@
 public abstract class Employe {
-    private String diplome;
-    private String nom;
-    private int age;
-    private int salaire;
-    private String role;
+    private final String metier;
+    private final String nom;
+    private final int age;
+    private final int salaire;
+    private final String role;
 
-    public Employe(String diplome, String nom, int age, int salaire, String role) {
-        this.diplome = diplome;
+    public Employe(String metier, String nom, int age, int salaire, String role) {
+        this.metier = metier;
         this.nom = nom;
         this.age = age;
         this.salaire = salaire;
@@ -16,6 +16,6 @@ public abstract class Employe {
     public abstract String effuctuerTache();
 
     public String toString() {
-        return "Diplome : " + this.diplome + "\n" + "Nom : " + this.nom + "\n" + "Âge : " + this.age + " ans\n" + "Salaire : " + this.salaire + ".-" + "\n" + "Role : " + this.role + "\n";
+        return "Métier : " + this.metier + "\n" + "Nom : " + this.nom + "\n" + "Âge : " + this.age + " ans\n" + "Salaire : " + this.salaire + ".-" + "\n" + "Role : " + this.role + "\n";
     }
 }
