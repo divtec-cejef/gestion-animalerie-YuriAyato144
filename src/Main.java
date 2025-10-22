@@ -1,19 +1,19 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class Main {
-
     public static void main(String[] args) {
-        ArrayList<Animal> listeAnimal = new ArrayList<>();
-        Chien chien = new Chien("Charle", 5, EtatSante.SAIN);
-        Chat chat = new Chat("Fripouille", 7, EtatSante.SAIN);
-        Lapin lapin = new Lapin("Panpan", 3, EtatSante.SAIN);
+        ConsoleIO consoleIO = new ConsoleIO();
+        consoleIO.listeAnimal.add(consoleIO.chien);
+        consoleIO.listeAnimal.add(consoleIO.chat);
+        consoleIO.listeAnimal.add(consoleIO.lapin);
+        System.out.println("Animaux : \n");
+        for (int afficherAnimal = 0; afficherAnimal < consoleIO.listeAnimal.size(); afficherAnimal++) {
+            System.out.println(consoleIO.listeAnimal.get(afficherAnimal));
+        }
 
-        listeAnimal.add(chien);
-        listeAnimal.add(chat);
-        listeAnimal.add(lapin);
-        for (int afficherAnimal = 0; afficherAnimal < listeAnimal.size(); afficherAnimal++) {
-            System.out.println(listeAnimal.get(afficherAnimal));
+        consoleIO.listeEmployes.add(consoleIO.soigeur);
+        consoleIO.listeEmployes.add(consoleIO.veterinaire);
+        System.out.println("Employes : \n");
+        for (int afficherEmployees = 0; afficherEmployees < consoleIO.listeEmployes.size(); afficherEmployees++) {
+            System.out.println(consoleIO.listeEmployes.get(afficherEmployees));
         }
     }
 }

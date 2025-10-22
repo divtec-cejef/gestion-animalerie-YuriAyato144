@@ -1,6 +1,6 @@
 public abstract class Soigneur extends Employe {
-    public Soigneur(Animal animal, String nom, int age, int salaire, String role) {
-        super(nom, age, salaire, role);
+    public Soigneur(String diplome, String nom, int age, int salaire, String role) {
+        super(diplome, nom, age, salaire, role);
     }
 
 }

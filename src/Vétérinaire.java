@@ -1,6 +1,6 @@
-public abstract class Vétérinaire extends Employe {
-    public Vétérinaire(Animal animal, String nom, int age, int salaire, String role) {
-        super(nom, age, salaire, role);
+public abstract class Veterinaire extends Employe {
+    public Veterinaire(String diplome, String nom, int age, int salaire, String role) {
+        super(diplome, nom, age, salaire, role);
 
     }
 }

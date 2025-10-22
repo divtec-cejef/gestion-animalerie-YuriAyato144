@@ -1,6 +1,6 @@
 public class Chat extends Animal {
-    public Chat(String nom, int age, EtatSante sante) {
-        super(nom, age, sante);
+    public Chat(String race, String nom, int age, EtatSante sante) {
+        super(race, nom, age, sante);
     }
 
     @Override
