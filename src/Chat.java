@@ -1,6 +1,6 @@
 public class Chat extends Animal {
-    public Chat(String race, String nom, int age, EtatSante sante) {
-        super(race, nom, age, sante);
+    public Chat(String race, String nom, int age, EtatSante sante, String bruit) {
+        super(race, nom, age, sante, bruit);
     }
 
 
