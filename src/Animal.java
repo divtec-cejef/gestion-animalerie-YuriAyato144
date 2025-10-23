@@ -19,41 +19,41 @@ public abstract class Animal {
         return race;
     }
 
-    public void setRace(String race) {
-        this.race = race;
-    }
+//    public void setRace(String race) {
+//        this.race = race;
+//    }
 
     public String getNom() {
         return nom;
     }
 
-    public int getAge() {
-        return age;
-    }
+//    public int getAge() {
+//        return age;
+//    }
 
     public EtatSante getSante() {
         return sante;
     }
 
-    public void setSante(EtatSante sante) {
-        this.sante = sante;
-    }
+//    public void setSante(EtatSante sante) {
+//        this.sante = sante;
+//    }
 
-    public String getBruit() {
-        return bruit;
-    }
-
-    public void setBruit(String bruit) {
-        this.bruit = bruit;
-    }
-
-    public String getSoinQuotidien() {
-        return soinQuotidien;
-    }
-
-    public void setSoinQuotidien(String soinQuotidien) {
-        this.soinQuotidien = soinQuotidien;
-    }
+//    public String getBruit() {
+//        return bruit;
+//    }
+//
+//    public void setBruit(String bruit) {
+//        this.bruit = bruit;
+//    }
+//
+//    public String getSoinQuotidien() {
+//        return soinQuotidien;
+//    }
+//
+//    public void setSoinQuotidien(String soinQuotidien) {
+//        this.soinQuotidien = soinQuotidien;
+//    }
 
     public abstract String bruit();
 
@@ -65,6 +65,7 @@ public abstract class Animal {
                 + "Nom : " + nom + "\n"
                 + "Âge : " + age + " ans\n"
                 + "État de santé : " + sante + "\n"
-                + "Bruit : " + bruit() + "\n";
+                + "Bruit : " + bruit() + "\n"
+                + "Soin quotidien : " + soinQuotidien + "\n";
     }
 }

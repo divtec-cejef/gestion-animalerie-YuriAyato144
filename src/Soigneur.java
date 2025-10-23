@@ -3,8 +3,7 @@ public abstract class Soigneur extends Employe {
         super(nom, prenom, role, age, salaire);
     }
 
-
     public String effuctuerTache(Animal animal) {
-return "";
+        return "";
     }
 }

@@ -11,15 +11,15 @@ public abstract class Employe {
         this.role = role;
         this.age = age;
         this.salaire = salaire;
-
     }
 
     public abstract String effectuerTache(Animal animal);
 
+
     public String toString() {
         return "Nom : " + this.nom + "\n"
                 + "Prenom : " + this.prenom + "\n"
-                +  "Role : " + this.role + "\n"
+                + "Role : " + this.role + "\n"
                 + "Âge : " + this.age + " ans\n"
                 + "Salaire : " + this.salaire + ".-" + "\n";
     }
