@@ -8,6 +8,7 @@ public class ConsoleIO {
 
     ArrayList<Employe> listeEmployes = new ArrayList<>();
     Soigneur soigeur = new Soigneur("Jean", "Heude", "soigneur", 24, 4593) {
+
         @Override
         public String effectuerTache(Animal animal) {
             return "";
@@ -15,6 +16,7 @@ public class ConsoleIO {
     };
 
     Vétérinaire veterinaire = new Vétérinaire("Elleestou", "Janne", "vétérinaire", 38, 5891) {
+
         @Override
         public String effectuerTache(Animal animal) {
             return "";
@@ -24,11 +26,11 @@ public class ConsoleIO {
     public String soignerAnimaux() {
         String animauxMalades = "";
 
-        for (Animal animal : listeAnimal) {
-            if (animal.getSante() != EtatSante.SAIN) {
-                animauxMalades += "Le " + animal.getRace()
-                        + " " + animal.getNom() + " est en : "
-                        + animal.getSante() + "\n";
+        for (int i = 0; i < listeAnimal.toArray().length; i++) {
+            if (listeAnimal.get(i).getSante() != EtatSante.SAIN) {
+                animauxMalades += "Le " + listeAnimal.get(i).getRace()
+                        + " " + listeAnimal.get(i).getNom() + " est en : "
+                        + listeAnimal.get(i).getSante() + "\n";
             }
         }
 

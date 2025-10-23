@@ -21,5 +21,6 @@ public class Main {
             System.out.println(consoleIO.listeEmployes.get(afficherEmployees));
         }
     System.out.println(consoleIO.soignerAnimaux());
+        System.out.println("Voulez-vous ");
     }
 }
