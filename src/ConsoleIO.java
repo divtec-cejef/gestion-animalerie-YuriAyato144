@@ -1,12 +1,10 @@
-//import java.util.Scanner;
-
 import java.util.ArrayList;
 
 public class ConsoleIO {
     ArrayList<Animal> listeAnimal = new ArrayList<>();
-    Chien chien = new Chien("Chien", "Charle", 5, EtatSante.SOIN_INTENSIF, "", "");
-    Chat chat = new Chat("Chat", "Fripouille", 7, EtatSante.SAIN, "", "");
-    Lapin lapin = new Lapin("Lapin", "Panpan", 3, EtatSante.SOIN_LEGER, "", "");
+    Chien chien = new Chien("chien", "Charle", 5, EtatSante.SOIN_INTENSIF, "", "");
+    Chat chat = new Chat("chat", "Fripouille", 7, EtatSante.SAIN, "", "");
+    Lapin lapin = new Lapin("lapin", "Panpan", 3, EtatSante.SOIN_LEGER, "", "");
 
     ArrayList<Employe> listeEmployes = new ArrayList<>();
     Soigneur soigeur = new Soigneur("Jean", 24, 4500) {
@@ -22,4 +20,22 @@ public class ConsoleIO {
             return "";
         }
     };
+
+    public String soignerAnimaux() {
+        String animauxMalades = "";
+
+        for (Animal animal : listeAnimal) {
+            if (animal.getSante() != EtatSante.SAIN) {
+                animauxMalades += "Le " + animal.getRace()
+                        + " " + animal.getNom() + " est en : "
+                        + animal.getSante() + "\n";
+            }
+        }
+
+        if (animauxMalades.equals("")) {
+            return "Tous les animaux sont à leur santé maximale ! ☺";
+        } else {
+            return "Animaux nécessitant des soins :\n" + animauxMalades;
+        }
+    }
 }

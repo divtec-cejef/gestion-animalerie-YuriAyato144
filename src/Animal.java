@@ -1,10 +1,10 @@
 public abstract class Animal {
-    private final String race;
+    private String race;
     private final String nom;
     private final int age;
-    private final EtatSante sante;
-    private final String bruit;
-    private final String soinQuotidien;
+    private EtatSante sante;
+    private String bruit;
+    private String soinQuotidien;
 
     public Animal(String race, String nom, int age, EtatSante sante, String bruit, String soinQuotidien) {
         this.race = race;
@@ -15,43 +15,57 @@ public abstract class Animal {
         this.soinQuotidien = soinQuotidien;
     }
 
-//    public String getRace() {
-//        return race;
-//    }
-//    public void setRace(String race) {
-//        this.race = race;
-//    }
-//    public String getNom() {
-//        return nom;
-//    }
-//    public int getAge() {
-//        return age;
-//    }
-//    public EtatSante getSante() {
-//        return this.sante;
-//    }
-//    public void setSante(EtatSante sante) {
-//        this.sante = sante;
-//    }
+    public String getRace() {
+        return race;
+    }
 
-    public abstract String bruit();
+    public void setRace(String race) {
+        this.race = race;
+    }
 
-    public abstract String soinQuotidien();
+    public String getNom() {
+        return nom;
+    }
 
-    public String toString() {
-        return "Race : " + this.race + "\n"
-                + "Nom : " + this.nom + "\n"
-                + "Âge : " + this.age + " ans\n"
-                + "État de santé : " + this.sante + "\n"
-                + "Bruit : " + this.bruit() + "\n"
-                + "Soin quotidien : " + this.soinQuotidien() + "\n";
+    public int getAge() {
+        return age;
+    }
+
+    public EtatSante getSante() {
+        return sante;
+    }
+
+    public void setSante(EtatSante sante) {
+        this.sante = sante;
     }
 
     public String getBruit() {
         return bruit;
     }
 
+    public void setBruit(String bruit) {
+        this.bruit = bruit;
+    }
+
     public String getSoinQuotidien() {
         return soinQuotidien;
+    }
+
+    public void setSoinQuotidien(String soinQuotidien) {
+        this.soinQuotidien = soinQuotidien;
+    }
+
+    public abstract String bruit();
+
+    public abstract String soinQuotidien();
+
+    @Override
+    public String toString() {
+        return "Race : " + race + "\n"
+                + "Nom : " + nom + "\n"
+                + "Âge : " + age + " ans\n"
+                + "État de santé : " + sante + "\n"
+                + "Bruit : " + bruit() + "\n"
+                + "Soin quotidien : " + soinQuotidien() + "\n";
     }
 }

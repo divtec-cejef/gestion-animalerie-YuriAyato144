@@ -10,6 +10,6 @@ public class Chat extends Animal {
 
 
     public String bruit() {
-        return "Miaou";
+        return "miaou";
     }
 }

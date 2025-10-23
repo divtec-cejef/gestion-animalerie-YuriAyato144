@@ -10,6 +10,6 @@ public class Chien extends Animal {
 
     @Override
     public String bruit() {
-        return "Wouaf";
+        return "wouaf";
     }
 }

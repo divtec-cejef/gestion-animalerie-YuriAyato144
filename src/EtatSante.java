@@ -1,7 +1,7 @@
 public enum EtatSante {
-    SAIN("Sain"),
-    SOIN_LEGER("Soin leger"),
-    SOIN_INTENSIF("Soin intensif");
+    SAIN("sain"),
+    SOIN_LEGER("soin leger"),
+    SOIN_INTENSIF("soin intensif");
 
     private final String nom;
 
