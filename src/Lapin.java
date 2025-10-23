@@ -4,7 +4,7 @@ public class Lapin extends Animal {
     }
 
 
-    public String soinQuotidien() {
+    public String soinQuotidien(Employe employe) {
         return "manger des carottes";
     }
 

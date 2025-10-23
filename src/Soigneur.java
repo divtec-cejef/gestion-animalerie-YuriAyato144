@@ -1,9 +1,9 @@
 public abstract class Soigneur extends Employe {
-    public Soigneur(String nom, int age, int salaire) {
-        super(nom, age, salaire);
+    public Soigneur(String nom, String prenom, String role, int age, int salaire) {
+        super(nom, prenom, role, age, salaire);
     }
 
-    @Override
+
     public String effuctuerTache(Animal animal) {
 return "";
     }

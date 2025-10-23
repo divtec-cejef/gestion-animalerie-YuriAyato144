@@ -4,7 +4,7 @@ public class Chat extends Animal {
     }
 
 
-    public String soinQuotidien() {
+    public String soinQuotidien(Employe employe) {
         return "se faire gratouiller";
     }
 

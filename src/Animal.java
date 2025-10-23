@@ -57,7 +57,7 @@ public abstract class Animal {
 
     public abstract String bruit();
 
-    public abstract String soinQuotidien();
+    public abstract String soinQuotidien(Employe employe);
 
     @Override
     public String toString() {
@@ -65,7 +65,6 @@ public abstract class Animal {
                 + "Nom : " + nom + "\n"
                 + "Âge : " + age + " ans\n"
                 + "État de santé : " + sante + "\n"
-                + "Bruit : " + bruit() + "\n"
-                + "Soin quotidien : " + soinQuotidien() + "\n";
+                + "Bruit : " + bruit() + "\n";
     }
 }

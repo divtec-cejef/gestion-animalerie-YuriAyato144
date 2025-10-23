@@ -4,7 +4,7 @@ public class Chien extends Animal {
     }
 
     @Override
-    public String soinQuotidien() {
+    public String soinQuotidien(Employe employe) {
         return "se faire promener";
     }
 

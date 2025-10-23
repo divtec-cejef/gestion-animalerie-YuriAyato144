@@ -7,16 +7,16 @@ public class ConsoleIO {
     Lapin lapin = new Lapin("lapin", "Panpan", 3, EtatSante.SOIN_LEGER, "", "");
 
     ArrayList<Employe> listeEmployes = new ArrayList<>();
-    Soigneur soigeur = new Soigneur("Jean", 24, 4500) {
+    Soigneur soigeur = new Soigneur("Jean", "Jean", "soigneur", 24, 4500) {
         @Override
-        public String effuctuerTache(Animal animal) {
+        public String effectuerTache(Animal animal) {
             return "";
         }
     };
 
-    Vétérinaire veterinaire = new Vétérinaire("Janne", 38, 5890) {
+    Vétérinaire veterinaire = new Vétérinaire("Elleestou", "Janne", "vétérinaire", 38, 5890) {
         @Override
-        public String effuctuerTache(Animal animal) {
+        public String effectuerTache(Animal animal) {
             return "";
         }
     };
