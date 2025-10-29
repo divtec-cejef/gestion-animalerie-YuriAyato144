@@ -2,28 +2,41 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ConsoleIO {
-    ArrayList<Animal> listeAnimal = new ArrayList<>();
-    Chien chien = new Chien("chien", "Charle", 5, EtatSante.SOIN_LEGER, "", "");
-    Chat chat = new Chat("chat", "Fripouille", 7, EtatSante.SAIN, "", "");
-    Lapin lapin = new Lapin("lapin", "Panpan", 3, EtatSante.SOIN_INTENSIF, "", "");
-    Chien chien2 = new Chien("chien", "Cookie", 4, EtatSante.SOIN_LEGER, "", "");
-
     ArrayList<Employe> listeEmployes = new ArrayList<>();
-    Soigneur soigeur = new Soigneur("Jean", "Heude", "soigneur", 24, 4593) {
+    ArrayList<Animal> listeAnimal = new ArrayList<>();
 
-        @Override
-        public String effectuerTache(Animal animal) {
-            return "";
-        }
-    };
+    Soigneur soigneur;
+    Vétérinaire veterinaire;
+    Chien chien;
+    Chat chat;
+    Lapin lapin;
+    Chien chien2;
 
-    Vétérinaire veterinaire = new Vétérinaire("Elleestou", "Janne", "vétérinaire", 38, 5891) {
+    // Constructeur
+    public ConsoleIO() {
+        // 1️⃣ Créer les employés
+        soigneur = new Soigneur("Jean", "Heude", "soigneur", 24, 4593) {
+            @Override
+            public String effectuerTache(Animal animal) { return ""; }
+        };
+        veterinaire = new Vétérinaire("Elleestou", "Janne", "vétérinaire", 38, 5891) {
+            @Override
+            public String effectuerTache(Animal animal) { return ""; }
+        };
 
-        @Override
-        public String effectuerTache(Animal animal) {
-            return "";
-        }
-    };
+        // 2️⃣ Créer les animaux
+        chien = new Chien("chien", "Charle", 5, EtatSante.SOIN_LEGER, "", "");
+        chien.setSoinQuotidien(chien.soinQuotidien(soigneur));
+
+        chat = new Chat("chat", "Fripouille", 7, EtatSante.SAIN, "", "");
+        chat.setSoinQuotidien(chat.soinQuotidien(soigneur));
+
+        lapin = new Lapin("lapin", "Panpan", 3, EtatSante.SOIN_INTENSIF, "", "");
+        lapin.setSoinQuotidien(lapin.soinQuotidien(soigneur));
+
+        chien2 = new Chien("chien", "Cookie", 4, EtatSante.SOIN_LEGER, "", "");
+        chien2.setSoinQuotidien(chien2.soinQuotidien(soigneur));
+    }
 
     public String santeAnimaux() {
         StringBuilder animauxMalades = new StringBuilder();

@@ -12,7 +12,7 @@ public class Main {
             System.out.println(consoleIO.listeAnimal.get(afficherAnimal));
         }
 
-        consoleIO.listeEmployes.add(consoleIO.soigeur);
+        consoleIO.listeEmployes.add(consoleIO.soigneur);
         consoleIO.listeEmployes.add(consoleIO.veterinaire);
         System.out.println("EMPLOYER : \n");
 

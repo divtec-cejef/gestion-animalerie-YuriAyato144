@@ -3,7 +3,7 @@ public class Chat extends Animal {
         super(race, nom, age, sante, bruit, soinQuotidien);
     }
 
-
+    @Override
     public String soinQuotidien(Employe employe) {
         return "se faire gratouiller";
     }

@@ -3,7 +3,7 @@ public class Lapin extends Animal {
         super(race, nom, age, sante, bruit, soinQuotidien);
     }
 
-
+    @Override
     public String soinQuotidien(Employe employe) {
         return "manger des carottes";
     }
