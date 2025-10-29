@@ -6,6 +6,7 @@ public class ConsoleIO {
     Chien chien = new Chien("chien", "Charle", 5, EtatSante.SOIN_LEGER, "", "");
     Chat chat = new Chat("chat", "Fripouille", 7, EtatSante.SAIN, "", "");
     Lapin lapin = new Lapin("lapin", "Panpan", 3, EtatSante.SOIN_INTENSIF, "", "");
+    Chien chien2 = new Chien("chien", "Cookie", 4, EtatSante.SOIN_LEGER, "", "");
 
     ArrayList<Employe> listeEmployes = new ArrayList<>();
     Soigneur soigeur = new Soigneur("Jean", "Heude", "soigneur", 24, 4593) {
@@ -40,21 +41,6 @@ public class ConsoleIO {
         }
     }
 
-    public String soignerAnimaux(ArrayList<Animal> animaux) {
-        int nombreSoignes = 0;
-        StringBuilder resultat = new StringBuilder();
-
-        for (Animal animal : animaux) {
-            if (animal.getSante() != EtatSante.SAIN) {
-                nombreSoignes++;
-            } else {
-                resultat.append(animal.getNom()).append(" (").append(animal.getRace()).append(") est déjà en pleine santé !\n");
-            }
-        }
-        resultat.append("\nTotal d'animaux à soignés : ").append(nombreSoignes).append("/").append(animaux.size()).append("\n");
-        return resultat.toString();
-    }
-
     Scanner scanner = new Scanner(System.in);
 
     public void menuSoins() {
@@ -83,8 +69,8 @@ public class ConsoleIO {
         for (int i = 0; i < listeAnimal.size(); i++) {
             Animal animal = listeAnimal.get(i);
             String statut = (animal.getSante() == EtatSante.SAIN) ? "✓" : "×";
-            System.out.println(statut + " " + (i + 1) + " - " + animal.getNom() +
-                    " (" + animal.getRace() + ") : " + animal.getSante());
+            System.out.println(statut + " " + (i + 1) + " - " + animal.getNom()
+                    + " : " + animal.getSante());
         }
     }
 
