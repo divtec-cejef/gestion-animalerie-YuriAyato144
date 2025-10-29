@@ -4,6 +4,6 @@ public abstract class Soigneur extends Employe {
     }
 
     public String effuctuerTache(Animal animal) {
-        return "";
+        return animal.getSoinQuotidien();
     }
 }
