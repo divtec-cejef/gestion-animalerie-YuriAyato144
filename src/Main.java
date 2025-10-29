@@ -19,6 +19,7 @@ public class Main {
             System.out.println(consoleIO.listeEmployes.get(afficherEmployees));
         }
         System.out.println(consoleIO.santeAnimaux());
-    System.out.println(consoleIO.soignerAnimaux(consoleIO.listeAnimal));
+        System.out.println(consoleIO.soignerAnimaux(consoleIO.listeAnimal));
+        consoleIO.menuSoins();
     }
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ConsoleIO {
     ArrayList<Animal> listeAnimal = new ArrayList<>();
@@ -45,8 +46,6 @@ public class ConsoleIO {
 
         for (Animal animal : animaux) {
             if (animal.getSante() != EtatSante.SAIN) {
-                animal.soigner();
-                resultat.append(animal.getNom()).append(" (").append(animal.getRace()).append(") a été soigné. Nouvel état : ").append(animal.getSante()).append("\n");
                 nombreSoignes++;
             } else {
                 resultat.append(animal.getNom()).append(" (").append(animal.getRace()).append(") est déjà en pleine santé !\n");
@@ -54,5 +53,89 @@ public class ConsoleIO {
         }
         resultat.append("\nTotal d'animaux à soignés : ").append(nombreSoignes).append("/").append(animaux.size());
         return resultat.toString();
+    }
+
+    Scanner scanner = new Scanner(System.in);
+
+    public void menuSoins() {
+        boolean continuer = true;
+
+        while (continuer) {
+            afficherListeAnimaux();
+
+            System.out.println("\nChoisir un animal à soigner. ");
+            System.out.print("Numéro de l'animal (0 pour quitter) : ");
+
+            int choix = scanner.nextInt();
+
+            if (choix == 0) {
+                System.out.println("Aucun soin administré. Fin du programme.");
+                continuer = false;
+            } else if (choix < 1 || choix > listeAnimal.size()) {
+                System.out.println("Numéro invalide !");
+            } else {
+                Animal animalChoisi = listeAnimal.get(choix - 1);
+                soignerUnAnimal(animalChoisi);
+            }
+        }
+    }
+
+    private void afficherListeAnimaux() {
+        for (int i = 0; i < listeAnimal.size(); i++) {
+            Animal animal = listeAnimal.get(i);
+            String statut = (animal.getSante() == EtatSante.SAIN) ? "✓" : "⚠";
+            System.out.println(statut + " " + (i + 1) + " - " + animal.getNom() +
+                    " (" + animal.getRace() + ") : " + animal.getSante());
+        }
+    }
+
+    private void soignerUnAnimal(Animal animal) {
+        if (animal.getSante() == EtatSante.SAIN) {
+            System.out.println("✓ " + animal.getNom() + " est déjà en pleine santé !");
+            return;
+        }
+
+        System.out.println("État actuel : " + animal.getSante());
+        System.out.println("\n1 - Soigner jusqu'à l'état de santé supérieur");
+        System.out.println("2 - Soigner jusqu'à l'état de santé " + EtatSante.SAIN);
+        System.out.print("Votre choix : ");
+
+        int choix = scanner.nextInt();
+
+        if (choix == 1) {
+            administrerUnSoin(animal);
+        } else if (choix == 2) {
+            soignerJusquaGuerison(animal);
+        } else {
+            System.out.println("Choix invalide !");
+        }
+    }
+
+    private void administrerUnSoin(Animal animal) {
+        EtatSante avantSoin = animal.getSante();
+        animal.soigner();
+
+        System.out.println("\n✓ Soin administré à " + animal.getNom());
+        System.out.println("  " + avantSoin + " → " + animal.getSante());
+
+        if (animal.getSante() != EtatSante.SAIN) {
+            System.out.println("  ⚠ Nécessite encore des soins");
+        } else {
+            System.out.println("  ✓ En pleine santé !");
+        }
+    }
+
+    private void soignerJusquaGuerison(Animal animal) {
+        int nombreSoins = 0;
+
+        while (animal.getSante() != EtatSante.SAIN) {
+            nombreSoins++;
+            EtatSante avantSoin = animal.getSante();
+            animal.soigner();
+            System.out.println("Soin #" + nombreSoins + " : " + avantSoin + " → " + animal.getSante());
+        }
+
+        System.out.println("\n✓ " + animal.getNom() + " est guéri !");
+        System.out.println("Nombre de soins : " + nombreSoins);
     }
 }
