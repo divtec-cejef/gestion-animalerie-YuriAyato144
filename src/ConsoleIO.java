@@ -23,14 +23,12 @@ public class ConsoleIO {
         }
     };
 
-    public String soignerAnimaux() {
-        String animauxMalades = "";
+    public String santeAnimaux() {
+        StringBuilder animauxMalades = new StringBuilder();
 
         for (int i = 0; i < listeAnimal.toArray().length; i++) {
             if (listeAnimal.get(i).getSante() != EtatSante.SAIN) {
-                animauxMalades += "Le " + listeAnimal.get(i).getRace()
-                        + " " + listeAnimal.get(i).getNom() + " est en : "
-                        + listeAnimal.get(i).getSante() + "\n";
+                animauxMalades.append("Le ").append(listeAnimal.get(i).getRace()).append(" ").append(listeAnimal.get(i).getNom()).append(" est en ").append(listeAnimal.get(i).getSante()).append("\n");
             }
         }
 
@@ -39,5 +37,22 @@ public class ConsoleIO {
         } else {
             return "Animaux nécessitant des soins :\n" + animauxMalades;
         }
+    }
+
+    public String soignerAnimaux(ArrayList<Animal> animaux) {
+        int nombreSoignes = 0;
+        StringBuilder resultat = new StringBuilder();
+
+        for (Animal animal : animaux) {
+            if (animal.getSante() != EtatSante.SAIN) {
+                animal.soigner();
+                resultat.append(animal.getNom()).append(" (").append(animal.getRace()).append(") a été soigné. Nouvel état : ").append(animal.getSante()).append("\n");
+                nombreSoignes++;
+            } else {
+                resultat.append(animal.getNom()).append(" (").append(animal.getRace()).append(") est déjà en pleine santé !\n");
+            }
+        }
+        resultat.append("\nTotal d'animaux à soignés : ").append(nombreSoignes).append("/").append(animaux.size());
+        return resultat.toString();
     }
 }

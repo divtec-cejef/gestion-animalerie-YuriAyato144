@@ -19,41 +19,47 @@ public abstract class Animal {
         return race;
     }
 
-//    public void setRace(String race) {
-//        this.race = race;
-//    }
+    public void setRace(String race) {
+        this.race = race;
+    }
 
     public String getNom() {
         return nom;
     }
 
-//    public int getAge() {
-//        return age;
-//    }
+    public int getAge() {
+        return age;
+    }
 
     public EtatSante getSante() {
         return sante;
     }
 
-//    public void setSante(EtatSante sante) {
-//        this.sante = sante;
-//    }
+    public void soigner() {
+        if(sante != EtatSante.SAIN) {
+            sante = EtatSante.values()[sante.ordinal() - 1];
+        }
+    }
 
-//    public String getBruit() {
-//        return bruit;
-//    }
-//
-//    public void setBruit(String bruit) {
-//        this.bruit = bruit;
-//    }
-//
-//    public String getSoinQuotidien() {
-//        return soinQuotidien;
-//    }
-//
-//    public void setSoinQuotidien(String soinQuotidien) {
-//        this.soinQuotidien = soinQuotidien;
-//    }
+    public void setSante(EtatSante sante) {
+        this.sante = sante;
+    }
+
+    public String getBruit() {
+        return bruit;
+    }
+
+    public void setBruit(String bruit) {
+        this.bruit = bruit;
+    }
+
+    public String getSoinQuotidien() {
+        return soinQuotidien;
+    }
+
+    public void setSoinQuotidien(String soinQuotidien) {
+        this.soinQuotidien = soinQuotidien;
+    }
 
     public abstract String bruit();
 

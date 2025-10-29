@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         ConsoleIO consoleIO = new ConsoleIO();
@@ -20,7 +18,7 @@ public class Main {
         for (int afficherEmployees = 0; afficherEmployees < consoleIO.listeEmployes.size(); afficherEmployees++) {
             System.out.println(consoleIO.listeEmployes.get(afficherEmployees));
         }
-    System.out.println(consoleIO.soignerAnimaux());
-        System.out.println("Voulez-vous ");
+        System.out.println(consoleIO.santeAnimaux());
+    System.out.println(consoleIO.soignerAnimaux(consoleIO.listeAnimal));
     }
 }
