@@ -51,7 +51,7 @@ public class ConsoleIO {
                 resultat.append(animal.getNom()).append(" (").append(animal.getRace()).append(") est déjà en pleine santé !\n");
             }
         }
-        resultat.append("\nTotal d'animaux à soignés : ").append(nombreSoignes).append("/").append(animaux.size());
+        resultat.append("\nTotal d'animaux à soignés : ").append(nombreSoignes).append("/").append(animaux.size()).append("\n");
         return resultat.toString();
     }
 
@@ -63,13 +63,12 @@ public class ConsoleIO {
         while (continuer) {
             afficherListeAnimaux();
 
-            System.out.println("\nChoisir un animal à soigner. ");
-            System.out.print("Numéro de l'animal (0 pour quitter) : ");
+            System.out.println("\nChoisir un animal à soigner (0 pour quitter) : ");
 
             int choix = scanner.nextInt();
 
             if (choix == 0) {
-                System.out.println("Aucun soin administré. Fin du programme.");
+                System.out.println("Soin fini pour aujourd'hui.");
                 continuer = false;
             } else if (choix < 1 || choix > listeAnimal.size()) {
                 System.out.println("Numéro invalide !");
@@ -83,7 +82,7 @@ public class ConsoleIO {
     private void afficherListeAnimaux() {
         for (int i = 0; i < listeAnimal.size(); i++) {
             Animal animal = listeAnimal.get(i);
-            String statut = (animal.getSante() == EtatSante.SAIN) ? "✓" : "⚠";
+            String statut = (animal.getSante() == EtatSante.SAIN) ? "✓" : "×";
             System.out.println(statut + " " + (i + 1) + " - " + animal.getNom() +
                     " (" + animal.getRace() + ") : " + animal.getSante());
         }
@@ -119,9 +118,9 @@ public class ConsoleIO {
         System.out.println("  " + avantSoin + " → " + animal.getSante());
 
         if (animal.getSante() != EtatSante.SAIN) {
-            System.out.println("  ⚠ Nécessite encore des soins");
+            System.out.println("\n× Nécessite encore des soins\n");
         } else {
-            System.out.println("  ✓ En pleine santé !");
+            System.out.println("\n✓ En pleine santé !\n");
         }
     }
 
@@ -135,7 +134,7 @@ public class ConsoleIO {
             System.out.println("Soin #" + nombreSoins + " : " + avantSoin + " → " + animal.getSante());
         }
 
-        System.out.println("\n✓ " + animal.getNom() + " est guéri !");
+        System.out.println("\n✓ " + animal.getNom() + " est guéri !\n");
         System.out.println("Nombre de soins : " + nombreSoins);
     }
 }
