@@ -13,7 +13,7 @@ public class Main {
         System.out.println("AJOUT D'EMPLOYÉS :");
         System.out.print("Combien d'employés voulez-vous ajouter ? ");
         int nbEmployes = sc.nextInt();
-        sc.nextLine(); // vide la ligne
+        sc.nextLine(); // vide le buffer
 
         for (int ajoutEmployer = 0; ajoutEmployer < nbEmployes; ajoutEmployer++) {
             System.out.println("\nEmployé " + (ajoutEmployer + 1));
@@ -23,8 +23,9 @@ public class Main {
             System.out.print("Nom : ");
             String nom = sc.nextLine();
 
-            System.out.print("Poste (soigneur / vétérinaire) : ");
-            String poste = sc.nextLine();
+            System.out.print("Poste (1 -> soigneur / 2 -> vétérinaire) : ");
+            int choixPoste = sc.nextInt();
+            sc.nextLine();
 
             System.out.print("Âge : ");
             int age = sc.nextInt();
@@ -33,6 +34,8 @@ public class Main {
             System.out.print("Salaire : ");
             int salaire = sc.nextInt();
             sc.nextLine();
+
+            String poste = (choixPoste == 1) ? "soigneur" : "vétérinaire";
 
             if (poste.equalsIgnoreCase("soigneur")) {
                 Soigneur soigneur = new Soigneur(prenom, nom, poste, age, salaire) {
@@ -59,9 +62,31 @@ public class Main {
         sc.nextLine();
 
         for (int i = 0; i < nbAnimaux; i++) {
-            System.out.println("\nAnimal #" + (i + 1));
-            System.out.print("Espèce (chien / chat / lapin) : ");
-            String espece = sc.nextLine();
+            System.out.println("\nAnimal " + (i + 1));
+
+            System.out.println("Choisissez l'espèce :");
+            System.out.println("1 -> Chien");
+            System.out.println("2 -> Chat");
+            System.out.println("3 -> Lapin");
+            System.out.print("Votre choix : ");
+            int choixEspece = sc.nextInt();
+            sc.nextLine();
+
+            String espece;
+            switch (choixEspece) {
+                case 1:
+                    espece = "chien";
+                    break;
+                case 2:
+                    espece = "chat";
+                    break;
+                case 3:
+                    espece = "lapin";
+                    break;
+                default:
+                    System.out.println("Choix invalide, l'animal ne sera pas ajouté.");
+                    continue;
+            }
 
             System.out.print("Nom : ");
             String nom = sc.nextLine();
@@ -70,13 +95,33 @@ public class Main {
             int age = sc.nextInt();
             sc.nextLine();
 
-            System.out.print("État de santé (sain / soin léger / soin intensif) : ");
-            String etat = sc.nextLine().toUpperCase();
-            EtatSante etatSante = EtatSante.valueOf(etat);
+            System.out.println("État de santé :");
+            System.out.println("1 -> SAIN");
+            System.out.println("2 -> SOIN LEGER");
+            System.out.println("3 -> SOIN INTENSIF");
+            System.out.print("Votre choix : ");
+            int choixEtat = sc.nextInt();
+            sc.nextLine();
+
+            EtatSante etatSante;
+            switch (choixEtat) {
+                case 1:
+                    etatSante = EtatSante.SAIN;
+                    break;
+                case 2:
+                    etatSante = EtatSante.SOIN_LEGER;
+                    break;
+                case 3:
+                    etatSante = EtatSante.SOIN_INTENSIF;
+                    break;
+                default:
+                    System.out.println("Choix invalide, état par défaut : SAIN");
+                    etatSante = EtatSante.SAIN;
+            }
 
             Animal animal = null;
 
-            switch (espece.toLowerCase()) {
+            switch (espece) {
                 case "chien":
                     animal = new Chien(espece, nom, age, etatSante, "", "");
                     break;
@@ -86,9 +131,6 @@ public class Main {
                 case "lapin":
                     animal = new Lapin(espece, nom, age, etatSante, "", "");
                     break;
-                default:
-                    System.out.println("Espèce non reconnue, l'animal ne sera pas ajouté.");
-                    continue;
             }
 
             listeAnimaux.add(animal);
