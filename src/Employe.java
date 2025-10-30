@@ -1,7 +1,7 @@
 public abstract class Employe {
-    private final String nom;
-    private final String prenom;
-    private final String role;
+    private  String nom;
+    private  String prenom;
+    private  String role;
     private final int age;
     private final int salaire;
 
@@ -11,6 +11,14 @@ public abstract class Employe {
         this.role = role;
         this.age = age;
         this.salaire = salaire;
+    }
+
+    public String getNom() {
+        return this.nom;
+    }
+
+    public String getPrenom() {
+        return this.prenom;
     }
 
     public abstract String effectuerTache(Animal animal);
