@@ -21,7 +21,7 @@ public abstract class Employe {
         return this.prenom;
     }
 
-    public abstract String effectuerTache(Animal animal);
+    public abstract void effectuerTache(Animal animal);
 
 
     public String toString() {
