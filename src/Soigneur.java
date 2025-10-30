@@ -1,14 +1,12 @@
-import java.sql.SQLOutput;
-
 public class Soigneur extends Employe {
 
-    public Soigneur(String nom, String prenom, String role, int age, int salaire) {
-        super(nom, prenom, role, age, salaire);
+    public Soigneur(String nom, String prenom, int age) {
+        super(nom, prenom, age);
     }
 
     @Override
     public void effectuerTache(Animal animal) {
-        System.out.println(animal.getNom());
+        System.out.println();
     }
 
 }

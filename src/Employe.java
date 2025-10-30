@@ -5,7 +5,7 @@ public abstract class Employe {
     private final int age;
     private final int salaire;
 
-    public Employe(String nom, String prenom, String role, int age, int salaire) {
+    public Employe(String nom, String prenom, int age) {
         this.nom = nom;
         this.prenom = prenom;
         this.role = role;
