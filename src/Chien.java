@@ -1,5 +1,5 @@
 public class Chien extends Animal {
-    public Chien(String race, int age, EtatSante sante) {
+    public Chien(String race, String nom, int age, EtatSante sante, String bruit, String soinQuotidien) {
         super(race, nom, age, sante, bruit, soinQuotidien);
     }
 

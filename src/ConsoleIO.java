@@ -7,7 +7,7 @@ public class ConsoleIO {
     }
 
     public static void afficherMenu() {
-        System.out.println("Menu\n" +
+        System.out.println("MENU\n\n" +
                 "1) Ajouter un animal\n" +
                 "2) Ajouter un employé\n" +
                 "3) Afficher tous les employées\n" +
@@ -15,14 +15,14 @@ public class ConsoleIO {
                 "5) Effectuer une tâche (employé)\n" +
                 "6) Faire un bruit (Animal)\n" +
                 "7) Quitter\n\n" +
-                "Que voulez-vous faire ? (1 - 7)\n");
+                "Que voulez-vous faire ? (1 - 7)");
     }
 
     public static void afficherListeEmployes(ArrayList<Employe> employes) {
-        System.out.println("Liste des employés : ");
+        System.out.println("Liste des employés : \n");
 
         if (employes.isEmpty()) {
-            System.out.println("Vous n'avez pas employés");
+            System.out.println("Vous n'avez pas employés\n");
         }
         for (Employe employe: employes) {
             afficherUnString(employe.toString());
@@ -30,17 +30,17 @@ public class ConsoleIO {
     }
 
     public static void afficherListeAnimaux(ArrayList<Animal> animaux) {
-        System.out.println("Liste des animaux : ");
+        System.out.println("Liste des animaux : \n");
 
         if (animaux.isEmpty()) {
-            System.out.println("Vous n'avez pas d'animaux");
+            System.out.println("Vous n'avez pas d'animaux\n");
         }
         for (Animal animal: animaux) {
             afficherUnString(animal.toString());
         }
     }
 
-    public static int demanderUnChiffre(int borneSup, int borneInf) {
+    public static int demanderNombre(int borneSup, int borneInf) {
         Scanner scanner = new Scanner(System.in);
         int choix = 0;
 

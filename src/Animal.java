@@ -16,7 +16,7 @@ public abstract class Animal {
     }
 
     public String getRace() {
-        return race;
+        return this.race;
     }
 
     public void setRace(String race) {
