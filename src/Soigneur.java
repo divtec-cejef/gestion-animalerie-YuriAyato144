@@ -6,7 +6,6 @@ public class Soigneur extends Employe {
 
     @Override
     public void effectuerTache(Animal animal) {
-        System.out.println();
+        System.out.println("Le soigneur effectue le soin quotidien de l'animal.");
     }
-
 }

@@ -15,9 +15,8 @@ public class Main {
                 case 3: ConsoleIO.afficherListeEmployes(employes); break;
                 case 4: ConsoleIO.afficherListeAnimaux(animal); break;
                 case 5: effectuerSoinQuotidien(animal, employes); break;
-                case 6: faireBruitAnimal(animal); break;
+                case 6: ConsoleIO.faireBruitAnimal(animal); break;
             }
-
         } while (choixMenuPrincipal != 7);
     }
 
@@ -33,10 +32,10 @@ public class Main {
         }
 
         // Sélection de l'animal
-        ConsoleIO.afficherUnString("\nSélectionnez un animal à soigner :\n");
+        ConsoleIO.afficherUnString("\nSélectionnez un animal :\n");
         for (int i = 0; i < animaux.size(); i++) {
             Animal animal = animaux.get(i);
-            ConsoleIO.afficherUnString((i + 1) + ") " + animal.getNom() + " (" + animal.getRace() + ")");
+            ConsoleIO.afficherUnString((i + 1) + ") " + animal.getNom() + " (" + animal.getRace() + ") - État : " + animal.getSante());
         }
 
         ConsoleIO.afficherUnString("\nChoisissez un animal (1 - " + animaux.size() + ") : ");
@@ -47,55 +46,91 @@ public class Main {
             return;
         }
 
-        // Sélection de l'employé
-        ConsoleIO.afficherUnString("\nSélectionnez un employé pour effectuer le soin :\n");
-        for (int i = 0; i < employes.size(); i++) {
-            Employe employe = employes.get(i);
-            ConsoleIO.afficherUnString((i + 1) + ") " + employe.getPrenom() + " " + employe.getNom());
-        }
-
-        ConsoleIO.afficherUnString("\nChoisissez un employé (1 - " + employes.size() + ") : ");
-        int choixEmploye = ConsoleIO.demanderNombre(employes.size() + 1, 1);
-
-        if (choixEmploye == 0) {
-            ConsoleIO.afficherUnString("\nChoix invalide.\n");
-            return;
-        }
-
-        // Effectuer le soin
         Animal animalChoisi = animaux.get(choixAnimal - 1);
-        Employe employeChoisi = employes.get(choixEmploye - 1);
 
-        String soin = animalChoisi.soinQuotidien(employeChoisi);
-        ConsoleIO.afficherUnString("\n" + employeChoisi.getPrenom() + " " + employeChoisi.getNom() +
-                " s'occupe de " + animalChoisi.getNom() + " : " + soin + "\n");
+        // Menu pour choisir le type d'action
+        ConsoleIO.afficherUnString("\nQue voulez-vous faire ?\n");
+        ConsoleIO.afficherUnString("1) Soigner l'animal (Vétérinaire)\n");
+        ConsoleIO.afficherUnString("2) Effectuer un soin quotidien (Soigneur)\n");
+        ConsoleIO.afficherUnString("\nChoisissez une action (1 - 2) : ");
+        int choixAction = ConsoleIO.demanderNombre(3, 1);
 
-        employeChoisi.effectuerTache(animalChoisi);
-    }
-
-    public static void faireBruitAnimal(ArrayList<Animal> animaux) {
-        if (animaux.isEmpty()) {
-            ConsoleIO.afficherUnString("\nVous n'avez pas d'animaux pour faire du bruit.\n");
+        if (choixAction == 0) {
+            ConsoleIO.afficherUnString("\nChoix invalide.\n");
             return;
         }
 
-        ConsoleIO.afficherUnString("\nSélectionnez un animal pour entendre son bruit :\n");
+        if (choixAction == 1) {
+            // Soigner avec un vétérinaire
+            ArrayList<Employe> veterinaires = new ArrayList<>();
+            for (Employe employe : employes) {
+                if (employe instanceof Vétérinaire) {
+                    veterinaires.add(employe);
+                }
+            }
 
-        for (int i = 0; i < animaux.size(); i++) {
-            Animal animal = animaux.get(i);
-            ConsoleIO.afficherUnString((i + 1) + ") " + animal.getNom() + " (" + animal.getRace() + ")");
-        }
+            if (veterinaires.isEmpty()) {
+                ConsoleIO.afficherUnString("\nVous n'avez pas de vétérinaire disponible.\n");
+                return;
+            }
 
-        ConsoleIO.afficherUnString("\nChoisissez un animal (1 - " + animaux.size() + ") : ");
-        int choix = ConsoleIO.demanderNombre(animaux.size() + 1, 1);
+            ConsoleIO.afficherUnString("\nSélectionnez un vétérinaire :\n");
+            for (int i = 0; i < veterinaires.size(); i++) {
+                Employe vet = veterinaires.get(i);
+                ConsoleIO.afficherUnString((i + 1) + ") " + vet.getPrenom() + " " + vet.getNom());
+            }
 
-        if (choix != 0) {
-            Animal animalChoisi = animaux.get(choix - 1);
-            ConsoleIO.afficherUnString("\n" + animalChoisi.getNom() + " fait : " + animalChoisi.bruit() + "\n");
-        } else {
-            ConsoleIO.afficherUnString("\nChoix invalide.\n");
+            ConsoleIO.afficherUnString("\nChoisissez un vétérinaire (1 - " + veterinaires.size() + ") : ");
+            int choixVet = ConsoleIO.demanderNombre(veterinaires.size() + 1, 1);
+
+            if (choixVet == 0) {
+                ConsoleIO.afficherUnString("\nChoix invalide.\n");
+                return;
+            }
+
+            Employe vetChoisi = veterinaires.get(choixVet - 1);
+            ConsoleIO.afficherUnString("\n" + vetChoisi.getPrenom() + " " + vetChoisi.getNom() +
+                    " soigne " + animalChoisi.getNom() + ".\n");
+
+            vetChoisi.effectuerTache(animalChoisi);
+
+        } else if (choixAction == 2) {
+            // Soin quotidien avec un soigneur
+            ArrayList<Employe> soigneurs = new ArrayList<>();
+            for (Employe employe : employes) {
+                if (employe instanceof Soigneur) {
+                    soigneurs.add(employe);
+                }
+            }
+
+            if (soigneurs.isEmpty()) {
+                ConsoleIO.afficherUnString("\nVous n'avez pas de soigneur disponible.\n");
+                return;
+            }
+
+            ConsoleIO.afficherUnString("\nSélectionnez un soigneur :\n");
+            for (int i = 0; i < soigneurs.size(); i++) {
+                Employe soigneur = soigneurs.get(i);
+                ConsoleIO.afficherUnString((i + 1) + ") " + soigneur.getPrenom() + " " + soigneur.getNom());
+            }
+
+            ConsoleIO.afficherUnString("\nChoisissez un soigneur (1 - " + soigneurs.size() + ") : ");
+            int choixSoigneur = ConsoleIO.demanderNombre(soigneurs.size() + 1, 1);
+
+            if (choixSoigneur == 0) {
+                ConsoleIO.afficherUnString("\nChoix invalide.\n");
+                return;
+            }
+
+            Employe soigneurChoisi = soigneurs.get(choixSoigneur - 1);
+            String soin = animalChoisi.soinQuotidien(soigneurChoisi);
+            ConsoleIO.afficherUnString("\n" + soigneurChoisi.getPrenom() + " " + soigneurChoisi.getNom() +
+                    " s'occupe de " + animalChoisi.getNom() + " : " + soin + "\n");
+
+            soigneurChoisi.effectuerTache(animalChoisi);
         }
     }
+
 
     public static Employe creerEmployeUtilisateur() {
         String nom;

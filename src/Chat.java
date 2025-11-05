@@ -5,7 +5,7 @@ public class Chat extends Animal {
 
     @Override
     public String soinQuotidien(Employe employe) {
-        return "se faire gratouiller";
+        return "gratouille";
     }
 
 
