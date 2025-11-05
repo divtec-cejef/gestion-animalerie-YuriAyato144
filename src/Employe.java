@@ -1,7 +1,7 @@
 public abstract class Employe {
-    private  String nom;
-    private  String prenom;
-    private  String role;
+    private String nom;
+    private String prenom;
+    private String role;
     private final int age;
     private int salaire;
 

@@ -16,7 +16,7 @@ public abstract class Animal {
     }
 
     public String getRace() {
-        return this.race;
+        return this.race = race;
     }
 
     public void setRace(String race) {
@@ -36,7 +36,7 @@ public abstract class Animal {
     }
 
     public void soigner() {
-        if(sante != EtatSante.SAIN) {
+        if (sante != EtatSante.SAIN) {
             sante = EtatSante.values()[sante.ordinal() - 1];
         }
     }
