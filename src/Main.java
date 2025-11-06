@@ -10,8 +10,8 @@ public class Main {
             ConsoleIO.afficherMenu();
             choixMenuPrincipal = ConsoleIO.demanderNombre(8, 1);
             switch (choixMenuPrincipal) {
-                case 1: animal.add(creerAnimalUtilisateur()); break;
-                case 2: employes.add(creerEmployeUtilisateur()); break;
+                case 1: animal.add(creerAnimal()); break;
+                case 2: employes.add(creerEmployer()); break;
                 case 3: ConsoleIO.afficherListeEmployes(employes); break;
                 case 4: ConsoleIO.afficherListeAnimaux(animal); break;
                 case 5: effectuerSoinQuotidien(animal, employes); break;
@@ -131,7 +131,7 @@ public class Main {
     }
 
 
-    public static Employe creerEmployeUtilisateur() {
+    public static Employe creerEmployer() {
         String nom;
         String prenom;
         int salaire;
@@ -167,7 +167,7 @@ public class Main {
         return employe;
     }
 
-    public static Animal creerAnimalUtilisateur() {
+    public static Animal creerAnimal() {
         String race = "";
         String nom;
         int age;
