@@ -1,7 +1,7 @@
 public class Soigneur extends Employe {
 
     public Soigneur(String nom, String prenom, int age, int role, int salaire) {
-        super(nom, prenom, age, role, salaire);
+        super(nom, prenom, age, String.valueOf(role), salaire);
     }
 
     @Override

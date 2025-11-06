@@ -14,8 +14,9 @@ public class ConsoleIO {
                 "4) Afficher tous les animaux\n" +
                 "5) Effectuer une tâche (employé)\n" +
                 "6) Faire un bruit (animal)\n" +
-                "7) Arrêter le programme\n\n" +
-                "Que voulez-vous faire ? (1 - 7)");
+                "7) S'inscrire à un concours\n" +
+                "8) Arrêter le programme\n\n" +
+                "Que voulez-vous faire ? (1 - 8)");
     }
 
     public static void afficherListeEmployes(ArrayList<Employe> employes) {
@@ -63,7 +64,7 @@ public class ConsoleIO {
     }
 
     public static void afficherMenuTypeEmploye() {
-        System.out.println("Quelle est le role de votre employé ? \n" +
+        System.out.println("Quelle est le role de votre employé ?\n" +
                 "1) Vétérinaire \n" +
                 "2) Soigneur \n\n" +
                 "Sélectioner (1 ou 2) : ");
@@ -99,5 +100,4 @@ public class ConsoleIO {
             afficherUnString("\nChoix invalide.\n");
         }
     }
-
 }

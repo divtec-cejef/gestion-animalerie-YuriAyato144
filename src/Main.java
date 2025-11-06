@@ -6,9 +6,8 @@ public class Main {
         ArrayList<Employe> employes = new ArrayList<>();
         int choixMenuPrincipal;
         do {
-
             ConsoleIO.afficherMenu();
-            choixMenuPrincipal = ConsoleIO.demanderNombre(8, 1);
+            choixMenuPrincipal = ConsoleIO.demanderNombre(9, 1);
             switch (choixMenuPrincipal) {
                 case 1:
                     animal.add(creerAnimal());
@@ -28,8 +27,11 @@ public class Main {
                 case 6:
                     ConsoleIO.faireBruitAnimal(animal);
                     break;
+                case 7:
+                    inscriptionConcours(animal);
+                    break;
             }
-        } while (choixMenuPrincipal != 7);
+        } while (choixMenuPrincipal != 8);
     }
 
     public static void effectuerSoinQuotidien(ArrayList<Animal> animaux, ArrayList<Employe> employes) {
@@ -229,5 +231,15 @@ public class Main {
 
         ConsoleIO.afficherUnString("\nL'animal a bien été ajouté\n");
         return animal;
+    }
+
+    public static void inscriptionConcours(ArrayList<Animal> animaux) {
+        ConsoleIO.afficherUnString("Nom du concours : ");
+        ConsoleIO.demanderUnStringLimite(50, 1);
+        ConsoleIO.afficherUnString("Animaux participant au concours : ");
+        for (int i = 0; i < animaux.size(); i++) {
+            Animal animal = animaux.get(i);
+            ConsoleIO.afficherUnString((i + 1) + ") " + animal.getNom() + " - santé : " + animal.getSante());
+        }
     }
 }
