@@ -5,7 +5,7 @@ public class Lapin extends Animal {
 
     @Override
     public String soinQuotidien(Employe employe) {
-        return "mange une carottes";
+        return this.getNom() + " mange une carottes";
     }
 
 

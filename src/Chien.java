@@ -5,7 +5,7 @@ public class Chien extends Animal {
 
     @Override
     public String soinQuotidien(Employe employe) {
-        return "promenade";
+        return this.getNom() + " se fait promener";
     }
 
     @Override

@@ -35,7 +35,7 @@ public class Main {
         ConsoleIO.afficherUnString("\nSélectionnez un animal :\n");
         for (int i = 0; i < animaux.size(); i++) {
             Animal animal = animaux.get(i);
-            ConsoleIO.afficherUnString((i + 1) + ") " + animal.getNom() + " (" + animal.getRace() + ") - État : " + animal.getSante());
+            ConsoleIO.afficherUnString((i + 1) + ") " + animal.getNom() + " - santé : " + animal.getSante());
         }
 
         ConsoleIO.afficherUnString("\nChoisissez un animal (1 - " + animaux.size() + ") : ");
@@ -88,11 +88,11 @@ public class Main {
                 return;
             }
 
-            Employe vetChoisi = veterinaires.get(choixVet - 1);
-            ConsoleIO.afficherUnString("\n" + vetChoisi.getPrenom() + " " + vetChoisi.getNom() +
+            Employe veterinaireChoisi = veterinaires.get(choixVet - 1);
+            ConsoleIO.afficherUnString("\n" + veterinaireChoisi.getPrenom() + " " + veterinaireChoisi.getNom() +
                     " soigne " + animalChoisi.getNom() + ".\n");
 
-            vetChoisi.effectuerTache(animalChoisi);
+            veterinaireChoisi.effectuerTache(animalChoisi);
 
         } else if (choixAction == 2) {
             // Soin quotidien avec un soigneur
@@ -124,10 +124,9 @@ public class Main {
 
             Employe soigneurChoisi = soigneurs.get(choixSoigneur - 1);
             String soin = animalChoisi.soinQuotidien(soigneurChoisi);
-            ConsoleIO.afficherUnString("\n" + soigneurChoisi.getPrenom() + " " + soigneurChoisi.getNom() +
-                    " s'occupe de " + animalChoisi.getNom() + " : " + soin + "\n");
-
             soigneurChoisi.effectuerTache(animalChoisi);
+            ConsoleIO.afficherUnString("\n" + soigneurChoisi.getPrenom() + " " + soigneurChoisi.getNom() +
+                    " s'occupe de " + animalChoisi.getNom() + " (" + soin + ").\n");
         }
     }
 
