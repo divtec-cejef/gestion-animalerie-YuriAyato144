@@ -1,11 +1,11 @@
 public abstract class Employe {
-    private String nom;
-    private String prenom;
-    private String role;
+    private final String nom;
+    private final String prenom;
+    private final String role;
     private final int age;
-    private int salaire;
+    private final int salaire;
 
-    public Employe(String nom, String prenom, int age) {
+    public Employe(String nom, String prenom, int age, String role, int salaire) {
         this.nom = nom;
         this.prenom = prenom;
         this.role = role;

@@ -1,6 +1,6 @@
 public class Vétérinaire extends Employe {
-    public Vétérinaire(String nom, String prenom, int age) {
-        super(nom, prenom, age);
+    public Vétérinaire(String nom, String prenom, int age, int role, int salaire) {
+        super(nom, prenom, age, role, salaire);
     }
 
     @Override
