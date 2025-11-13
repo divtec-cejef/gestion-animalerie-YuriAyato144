@@ -13,7 +13,7 @@ Ce projet vous place dans la peau d’un gestionnaire d’**animalerie**.
         - Par exemple : Le chien fait pour bruit “Wouaf!”, et son soin quotidien est de se faire “brosser”.
 - **Des employés** :
     - `Soigneur` : réalise les soins quotidiens propres à chaque animal.
-    - `Vétérinaire` : soigne un animal malade et améliore son état de santé.
+    - `Veterinaire` : soigne un animal malade et améliore son état de santé.
     - Tous héritent de la classe abstraite `Employe` (avec nom, prénom, salaire et rôle).
 - **Des concours animaliers** :
     - Chaque concours a un **nom**, un **lieu**, une **capacité maximale**.
@@ -33,7 +33,7 @@ Votre programme doit :
 2. Gérer des **listes dynamiques** (ArrayList) d’animaux, d’employés et de concours.
 3. Vérifier les **règles métier** :
     - Un `Soigneur` ne peut exécuter que l’option de soin quotidien.
-    - Un `Vétérinaire` ne peut exécuter que l’option de soins médicaux.
+    - Un `Veterinaire` ne peut exécuter que l’option de soins médicaux.
     - Un concours n’accepte que des animaux **sains**, pas déjà inscrits, dans la limite de sa capacité.
 4. Fournir un **menu console** clair et robuste pour naviguer entre les fonctionnalités (ajout, suppression, inscriptions, concours, etc.).
 5. Afficher des messages explicites (confirmation, erreur, invalidité d’index, etc.).

@@ -3,13 +3,13 @@ import java.util.ArrayList;
 public class Concours {
     String nomConcours;
     String lieuxConcours;
-    int capacité;
+    int capacite;
     ArrayList<Animal> participantAniaml;
 
-    public Concours(String nomConcours, String lieuxConcours, int capacité, ArrayList<Animal> participantAniaml) {
+    public Concours(String nomConcours, String lieuxConcours, int capacite, ArrayList<Animal> participantAniaml) {
         this.nomConcours = nomConcours;
         this.lieuxConcours = lieuxConcours;
-        this.capacité = capacité;
+        this.capacite = capacite;
         this.participantAniaml = participantAniaml;
     }
 
@@ -20,4 +20,5 @@ public class Concours {
     public static String lieuxConcours(String lieuxConcours) {
         return lieuxConcours;
     }
+
 }

@@ -1,5 +1,5 @@
-public class Vétérinaire extends Employe {
-    public Vétérinaire(String nom, String prenom, int age, int role, int salaire) {
+public class Veterinaire extends Employe {
+    public Veterinaire(String nom, String prenom, int age, int role, int salaire) {
         super(nom, prenom, age, String.valueOf(role), salaire);
     }
 

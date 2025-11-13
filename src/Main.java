@@ -78,7 +78,7 @@ public class Main {
             // Soigner avec un vétérinaire
             ArrayList<Employe> veterinaires = new ArrayList<>();
             for (Employe employe : employes) {
-                if (employe instanceof Vétérinaire) {
+                if (employe instanceof Veterinaire) {
                     veterinaires.add(employe);
                 }
             }
@@ -175,7 +175,7 @@ public class Main {
 
         switch (role) {
             case 1:
-                employe = new Vétérinaire(nom, prenom, age, role, salaire);
+                employe = new Veterinaire(nom, prenom, age, role, salaire);
                 break;
             case 2:
                 employe = new Soigneur(nom, prenom, age, role, salaire);
