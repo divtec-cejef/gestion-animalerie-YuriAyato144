@@ -216,13 +216,13 @@ public class Main {
 
         switch (role) {
             case 1:
-                animal = new Chat(race, nom, age, EtatSante.SOIN_INTENSIF, bruit, soinQuotidien);
+                animal = new Chat(race, nom, age, EtatSante.SOIN_LEGER, bruit, soinQuotidien);
                 break;
             case 2:
-                animal = new Chien(race, nom, age, EtatSante.SOIN_INTENSIF, bruit, soinQuotidien);
+                animal = new Chien(race, nom, age, EtatSante.SAIN, bruit, soinQuotidien);
                 break;
             case 3:
-                animal = new Lapin(race, nom, age, EtatSante.SOIN_INTENSIF, bruit, soinQuotidien);
+                animal = new Lapin(race, nom, age, EtatSante.SOIN_LEGER, bruit, soinQuotidien);
                 break;
             default:
                 ConsoleIO.afficherUnString("Choix invalide, création annulée.");
@@ -234,12 +234,18 @@ public class Main {
     }
 
     public static void inscriptionConcours(ArrayList<Animal> animaux) {
-        ConsoleIO.afficherUnString("Nom du concours : ");
-        ConsoleIO.demanderUnStringLimite(50, 1);
-        ConsoleIO.afficherUnString("Animaux participant au concours : ");
+        ConsoleIO.afficherUnString("Nom du concours :");
+        ConsoleIO.afficherUnString(Concours.nomConcours("Woof Land\n"));
+        ConsoleIO.afficherUnString("Lieux du concours :");
+        ConsoleIO.afficherUnString(Concours.lieuxConcours("Suisse\n"));
+        ConsoleIO.afficherUnString("Animaux participant au concours :");
         for (int i = 0; i < animaux.size(); i++) {
             Animal animal = animaux.get(i);
-            ConsoleIO.afficherUnString((i + 1) + ") " + animal.getNom() + " - santé : " + animal.getSante());
+            if (animal.getSante() != EtatSante.SAIN) {
+                ConsoleIO.afficherUnString("Aucun participant\n");
+            } else {
+                ConsoleIO.afficherUnString((i + 1) + ") " + animal.getNom());
+            }
         }
     }
 }

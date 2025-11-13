@@ -7,7 +7,7 @@ public class ConsoleIO {
     }
 
     public static void afficherMenu() {
-        System.out.println("MENU\n\n" +
+        System.out.println("\nMENU\n\n" +
                 "1) Ajouter un animal\n" +
                 "2) Ajouter un employé\n" +
                 "3) Afficher tous les employés\n" +
