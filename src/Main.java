@@ -258,8 +258,8 @@ public class Main {
             }
 
             // Demander la sélection
-            ConsoleIO.afficherUnString("Quel animal voulez-vous ajouter ?");
-            // Ajouter ici la logique pour lire le choix de l'utilisateur
+            ConsoleIO.afficherUnString("Quel animal voulez-vous ajouter au concours ? (1 - " + animauxSains.size() + ")");
+            ConsoleIO.demanderNombre(animauxSains.size(), 1);
         }
     }
 }
