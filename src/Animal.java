@@ -16,7 +16,7 @@ public abstract class Animal {
     }
 
     public String getRace() {
-        return this.race = race;
+        return this.race;
     }
 
     public void setRace(String race) {
@@ -24,11 +24,11 @@ public abstract class Animal {
     }
 
     public String getNom() {
-        return nom;
+        return this.nom;
     }
 
     public int getAge() {
-        return age;
+        return this.age;
     }
 
     public EtatSante getSante() {
@@ -46,7 +46,7 @@ public abstract class Animal {
     }
 
     public String getBruit() {
-        return bruit;
+        return this.bruit;
     }
 
     public void setBruit(String bruit) {
@@ -54,7 +54,7 @@ public abstract class Animal {
     }
 
     public String getSoinQuotidien() {
-        return soinQuotidien;
+        return this.soinQuotidien;
     }
 
     public void setSoinQuotidien(String soinQuotidien) {

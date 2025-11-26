@@ -1,6 +1,6 @@
 public class Lapin extends Animal {
     public Lapin(String race, String nom, int age, EtatSante sante, String bruit, String soinQuotidien) {
-        super(race, nom, age, sante, bruit, soinQuotidien);
+        super(race = "lapin", nom, age, sante, bruit, soinQuotidien);
     }
 
     @Override
