@@ -238,14 +238,28 @@ public class Main {
         ConsoleIO.afficherUnString(Concours.nomConcours("Woof Land\n"));
         ConsoleIO.afficherUnString("Lieux du concours :");
         ConsoleIO.afficherUnString(Concours.lieuxConcours("Suisse\n"));
-        ConsoleIO.afficherUnString("Animaux participant au concours :");
-        for (int i = 0; i < animaux.size(); i++) {
-            Animal animal = animaux.get(i);
-            if (animal.getSante() != EtatSante.SAIN) {
-                ConsoleIO.afficherUnString("Aucun participant\n");
-            } else {
-                ConsoleIO.afficherUnString((i + 1) + ") " + animal.getNom());
+        ConsoleIO.afficherUnString("Animaux pouvant participer au concours :\n");
+
+        // Collecter les animaux sains
+        ArrayList<Animal> animauxSains = new ArrayList<>();
+        for (Animal animal : animaux) {
+            if (animal.getSante() == EtatSante.SAIN) {
+                animauxSains.add(animal);
             }
+        }
+
+        // Vérifier s'il y a des animaux sains
+        if (animauxSains.isEmpty()) {
+            ConsoleIO.afficherUnString("Aucun animal ne peut participer\n");
+        } else {
+            // Afficher la liste des animaux sains
+            for (int i = 0; i < animauxSains.size(); i++) {
+                ConsoleIO.afficherUnString((i + 1) + ") " + animauxSains.get(i).getNom() + "\n");
+            }
+
+            // Demander la sélection
+            ConsoleIO.afficherUnString("Quel animal voulez-vous ajouter ?");
+            // Ajouter ici la logique pour lire le choix de l'utilisateur
         }
     }
 }
